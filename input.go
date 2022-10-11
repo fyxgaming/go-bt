@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/libsv/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript"
 	"github.com/pkg/errors"
 )
 
@@ -28,7 +28,6 @@ const DefaultSequenceNumber uint32 = 0xFFFFFFFF
 // Input is a representation of a transaction input
 //
 // DO NOT CHANGE ORDER - Optimised for memory via maligned
-//
 type Input struct {
 	previousTxID       []byte
 	PreviousTxSatoshis uint64

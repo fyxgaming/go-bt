@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/libsv/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript"
 )
 
 type nodeTxWrapper struct {

@@ -1,9 +1,9 @@
 package interpreter
 
 import (
-	"github.com/libsv/go-bt/v2"
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/bscript/interpreter/scriptflag"
+	"github.com/fyxgaming/go-bt/v2"
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript/interpreter/scriptflag"
 )
 
 // ExecutionOptionFunc for setting execution options.

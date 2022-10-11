@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"encoding/binary"
 
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/sighash"
 	"github.com/libsv/go-bk/crypto"
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/sighash"
 )
 
 // defaultHex is used to fix a bug in the original client (see if statement in the CalcInputSignatureHash func)

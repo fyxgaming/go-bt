@@ -8,7 +8,7 @@ import (
 
 	"github.com/libsv/go-bk/crypto"
 
-	"github.com/libsv/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript"
 )
 
 /*
@@ -36,7 +36,6 @@ lock_time        if non-zero and sequence numbers are < 0xFFFFFFFF: block height
 // Tx wraps a bitcoin transaction
 //
 // DO NOT CHANGE ORDER - Optimised memory via malign
-//
 type Tx struct {
 	Inputs   []*Input
 	Outputs  []*Output
@@ -322,11 +321,13 @@ func (tx *Tx) Clone() *Tx {
 // NodeJSON returns a wrapped *bt.Tx for marshalling/unmarshalling into a node tx format.
 //
 // Marshalling usage example:
-//  bb, err := json.Marshal(tx.NodeJSON())
+//
+//	bb, err := json.Marshal(tx.NodeJSON())
 //
 // Unmarshalling usage example:
-//  tx := bt.NewTx()
-//  if err := json.Unmarshal(bb, tx.NodeJSON()); err != nil {}
+//
+//	tx := bt.NewTx()
+//	if err := json.Unmarshal(bb, tx.NodeJSON()); err != nil {}
 func (tx *Tx) NodeJSON() interface{} {
 	return &nodeTxWrapper{Tx: tx}
 }
@@ -334,11 +335,13 @@ func (tx *Tx) NodeJSON() interface{} {
 // NodeJSON returns a wrapped bt.Txs for marshalling/unmarshalling into a node tx format.
 //
 // Marshalling usage example:
-//  bb, err := json.Marshal(txs.NodeJSON())
+//
+//	bb, err := json.Marshal(txs.NodeJSON())
 //
 // Unmarshalling usage example:
-//  var txs bt.Txs
-//  if err := json.Unmarshal(bb, txs.NodeJSON()); err != nil {}
+//
+//	var txs bt.Txs
+//	if err := json.Unmarshal(bb, txs.NodeJSON()); err != nil {}
 func (tt *Txs) NodeJSON() interface{} {
 	return (*nodeTxsWrapper)(tt)
 }

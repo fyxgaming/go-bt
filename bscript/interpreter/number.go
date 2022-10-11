@@ -4,7 +4,7 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/libsv/go-bt/v2/bscript/interpreter/errs"
+	"github.com/fyxgaming/go-bt/v2/bscript/interpreter/errs"
 )
 
 // scriptNumber represents a numeric value used in the scripting engine with
@@ -290,18 +290,19 @@ func (n *scriptNumber) Set(i int64) *scriptNumber {
 // Bytes returns the number serialised as a little endian with a sign bit.
 //
 // Example encodings:
-//       127 -> [0x7f]
-//      -127 -> [0xff]
-//       128 -> [0x80 0x00]
-//      -128 -> [0x80 0x80]
-//       129 -> [0x81 0x00]
-//      -129 -> [0x81 0x80]
-//       256 -> [0x00 0x01]
-//      -256 -> [0x00 0x81]
-//     32767 -> [0xff 0x7f]
-//    -32767 -> [0xff 0xff]
-//     32768 -> [0x00 0x80 0x00]
-//    -32768 -> [0x00 0x80 0x80]
+//
+//	   127 -> [0x7f]
+//	  -127 -> [0xff]
+//	   128 -> [0x80 0x00]
+//	  -128 -> [0x80 0x80]
+//	   129 -> [0x81 0x00]
+//	  -129 -> [0x81 0x80]
+//	   256 -> [0x00 0x01]
+//	  -256 -> [0x00 0x81]
+//	 32767 -> [0xff 0x7f]
+//	-32767 -> [0xff 0xff]
+//	 32768 -> [0x00 0x80 0x00]
+//	-32768 -> [0x00 0x80 0x80]
 func (n *scriptNumber) Bytes() []byte {
 	// Zero encodes as an empty byte slice.
 	if n.IsZero() {

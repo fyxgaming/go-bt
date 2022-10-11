@@ -1,7 +1,7 @@
 package bt
 
 import (
-	"github.com/libsv/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript"
 )
 
 const (
@@ -21,7 +21,8 @@ func (tx *Tx) ChangeToAddress(addr string, f *FeeQuote) error {
 }
 
 // Change calculates the amount of fees needed to cover the transaction
-//  and adds the leftover change in a new output using the script provided.
+//
+//	and adds the leftover change in a new output using the script provided.
 func (tx *Tx) Change(s *bscript.Script, f *FeeQuote) error {
 	if _, _, err := tx.change(f, &changeOutput{
 		lockingScript: s,

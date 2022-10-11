@@ -4,9 +4,9 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/bscript/interpreter"
-	"github.com/libsv/go-bt/v2/bscript/interpreter/debug"
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript/interpreter"
+	"github.com/fyxgaming/go-bt/v2/bscript/interpreter/debug"
 	"github.com/stretchr/testify/assert"
 )
 

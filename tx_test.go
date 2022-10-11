@@ -11,12 +11,12 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/fyxgaming/go-bt/v2"
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/testing/data"
+	"github.com/fyxgaming/go-bt/v2/unlocker"
 	"github.com/libsv/go-bk/wif"
 	. "github.com/libsv/go-bk/wif"
-	"github.com/libsv/go-bt/v2"
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/testing/data"
-	"github.com/libsv/go-bt/v2/unlocker"
 	"github.com/stretchr/testify/assert"
 )
 

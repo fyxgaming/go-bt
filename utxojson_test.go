@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/libsv/go-bt/v2"
-	"github.com/libsv/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2"
+	"github.com/fyxgaming/go-bt/v2/bscript"
 	"github.com/stretchr/testify/assert"
 )
 

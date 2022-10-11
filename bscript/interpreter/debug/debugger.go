@@ -1,6 +1,6 @@
 package debug
 
-import "github.com/libsv/go-bt/v2/bscript/interpreter"
+import "github.com/fyxgaming/go-bt/v2/bscript/interpreter"
 
 type (
 	// ThreadStateFunc debug handler for a threads state.
@@ -66,14 +66,15 @@ type debugger struct {
 // functions.
 //
 // Example usage:
-//  debugger := debug.NewDebugger()
-//  debugger.AttachBeforeExecuteOpcode(func (state *interpreter.State) {
-//      fmt.Println(state.DataStack)
-//  })
-//  debugger.AttachAfterStackPush(func (state *interpreter.State, data []byte) {
-//      fmt.Println(hex.EncodeToString(data))
-//  })
-//  engine.Execute(interpreter.WithDebugger(debugger))
+//
+//	debugger := debug.NewDebugger()
+//	debugger.AttachBeforeExecuteOpcode(func (state *interpreter.State) {
+//	    fmt.Println(state.DataStack)
+//	})
+//	debugger.AttachAfterStackPush(func (state *interpreter.State, data []byte) {
+//	    fmt.Println(hex.EncodeToString(data))
+//	})
+//	engine.Execute(interpreter.WithDebugger(debugger))
 func NewDebugger(oo ...DebuggerOptionFunc) DefaultDebugger {
 	opts := &debugOpts{}
 	for _, o := range oo {

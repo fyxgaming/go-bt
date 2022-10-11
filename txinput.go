@@ -10,8 +10,8 @@ import (
 	"github.com/libsv/go-bk/crypto"
 	"github.com/pkg/errors"
 
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/sighash"
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/sighash"
 )
 
 // UTXOGetterFunc is used for tx.Fund(...). It provides the amount of satoshis required
@@ -137,25 +137,26 @@ func (tx *Tx) FromUTXOs(utxos ...*UTXO) error {
 // If insufficient utxos are provided from the UTXOGetterFunc, a bt.ErrInsufficientFunds is returned.
 //
 // Example usage:
-//    if err := tx.Fund(ctx, bt.NewFeeQuote(), func(ctx context.Context, deficit satoshis) ([]*bt.UTXO, error) {
-//        utxos := make([]*bt.UTXO, 0)
-//        for _, f := range funds {
-//            deficit -= satoshis
-//            utxos := append(utxos, &bt.UTXO{
-//                TxID: f.TxID,
-//                Vout: f.Vout,
-//                LockingScript: f.Script,
-//                Satoshis: f.Satoshis,
-//            })
-//            if deficit == 0 {
-//                return utxos, nil
-//            }
-//        }
-//        return nil, bt.ErrNoUTXO
-//    }); err != nil {
-//        if errors.Is(err, bt.ErrInsufficientFunds) { /* handle */ }
-//        return err
-//    }
+//
+//	if err := tx.Fund(ctx, bt.NewFeeQuote(), func(ctx context.Context, deficit satoshis) ([]*bt.UTXO, error) {
+//	    utxos := make([]*bt.UTXO, 0)
+//	    for _, f := range funds {
+//	        deficit -= satoshis
+//	        utxos := append(utxos, &bt.UTXO{
+//	            TxID: f.TxID,
+//	            Vout: f.Vout,
+//	            LockingScript: f.Script,
+//	            Satoshis: f.Satoshis,
+//	        })
+//	        if deficit == 0 {
+//	            return utxos, nil
+//	        }
+//	    }
+//	    return nil, bt.ErrNoUTXO
+//	}); err != nil {
+//	    if errors.Is(err, bt.ErrInsufficientFunds) { /* handle */ }
+//	    return err
+//	}
 func (tx *Tx) Fund(ctx context.Context, fq *FeeQuote, next UTXOGetterFunc) error {
 	deficit, err := tx.estimateDeficit(fq)
 	if err != nil {

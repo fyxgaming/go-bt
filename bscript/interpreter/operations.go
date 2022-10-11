@@ -7,13 +7,13 @@ import (
 	"hash"
 	"math/big"
 
+	"github.com/fyxgaming/go-bt/v2"
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/bscript/interpreter/errs"
+	"github.com/fyxgaming/go-bt/v2/bscript/interpreter/scriptflag"
+	"github.com/fyxgaming/go-bt/v2/sighash"
 	"github.com/libsv/go-bk/bec"
 	"github.com/libsv/go-bk/crypto"
-	"github.com/libsv/go-bt/v2"
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/bscript/interpreter/errs"
-	"github.com/libsv/go-bt/v2/bscript/interpreter/scriptflag"
-	"github.com/libsv/go-bt/v2/sighash"
 	"golang.org/x/crypto/ripemd160"
 )
 

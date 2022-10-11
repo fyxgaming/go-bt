@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
+	"github.com/fyxgaming/go-bt/v2"
+	"github.com/fyxgaming/go-bt/v2/bscript"
+	"github.com/fyxgaming/go-bt/v2/sighash"
 	"github.com/libsv/go-bk/bec"
-	"github.com/libsv/go-bt/v2"
-	"github.com/libsv/go-bt/v2/bscript"
-	"github.com/libsv/go-bt/v2/sighash"
 )
 
 // Getter implements the `bt.UnlockerGetter` interface. It unlocks a Tx locally,

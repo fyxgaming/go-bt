@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
+	"github.com/fyxgaming/go-bt/v2"
+	"github.com/fyxgaming/go-bt/v2/unlocker"
 	. "github.com/libsv/go-bk/wif"
-	"github.com/libsv/go-bt/v2"
-	"github.com/libsv/go-bt/v2/unlocker"
 	"github.com/stretchr/testify/assert"
 )
 
