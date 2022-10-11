@@ -1,4 +1,4 @@
-module github.com/libsv/go-bt/v2
+module github.com/fyxgaming/go-bt/v2
 
 go 1.17
 
